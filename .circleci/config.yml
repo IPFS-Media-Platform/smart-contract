@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.15
+      - image: trufflesuite/ganache-cli
+        command: ganache-cli
 
     working_directory: ~/repo
 
@@ -27,6 +29,6 @@ jobs:
 
 workflows:
   version: 2
-  run-jobs:
+  run-integration:
     jobs:
       - build
